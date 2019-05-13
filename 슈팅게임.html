@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>슈팅게임</title>
+    <style>
+        #wrapper {
+            width: 700px;
+            height: 900px;
+            margin: auto;
+            position: absolute;
+            overflow: hidden;
+            background: url("./back2.jpg");
+            background-repeat: repeat-y;
+            background-size: 100%;
+            font-Size: 100px;
+            text-align: center;
+            color: #fff;
+        }
+
+        #time {
+            width: 550px;
+            height: 400px;
+            position: absolute;
+            color: white;
+            font-size: 100px;
+            top: 250px;
+            left: 100px;
+            margin: auto;
+        }
+
+
+        #hp_area {
+            width: 70%;
+            height: 50px;
+            float: left;
+            position: relative;
+        }
+
+        #score_area {
+            width: 30%;
+            height: 50px;
+            float: left;
+            text-align: center;
+            font-size: 40px;
+            color: #fff;
+        }
+
+
+        #over {
+            margin: auto;
+            width: 550px;
+            height: 400px;
+            position: absolute;
+            color: white;
+            top: 250px;
+            left: 80px;
+            font-size: 100px;
+            display: none;
+        }
+
+        #re{
+            width : 250px;
+            height : 100px;
+            background: grey;
+            font-size: 40px;
+        }
+    </style>
+    <script src="./GameObject.js"></script>
+    <script src="./ObjectManager.js"></script>
+    <script src="./Ship.js"></script>
+    <script src="./Bullet.js"></script>
+    <script src="./EBullet.js"></script>
+    <script src="./Enemy.js"></script>
+    <script src="./HP.js"></script>
+    <script src="./Boost.js"></script>
+    <script src="./Boss.js"></script>
+    <script src="./common.js"></script>
+    <script>
+        var bgY = 0;
+        var ship;
+        var wrapper;
+        var stage;
+        var objectManager;
+        var hp_area;
+        var hpArray = []; //hp를 담을 배열
+        var score = 0;
+        var score_area;
+        var count = 4; //몇번째 hp가 제거 되어야 하는지 결정하는 변수
+        var boost;
+        var bullet;
+        var a = "./bullet.png"; //총알 주소
+        var boss;
+        var hitcount = 9;
+        var ebullet;
+        var flag = true;
+        var sec = 4;
+        var b = 400; //부스트먹으면 총알 더 많이 나오게
+        var stageNum = 0; //스테이지 넘버
+        var EnemyArr = 0;//적군의 수를 세어놓음
+
+
+        function init() {
+
+            wrapper = document.getElementById("wrapper");
+            stage = document.getElementById("stage");
+            hp_area = document.getElementById("hp_area");
+            score_area = document.getElementById("score_area");
+            objectManager = new ObjectManager();
+            //bgEffect();
+            createShip();
+            createEnemy();
+            createEBullet();
+            createHP();
+            createBullet();
+            createBoost();
+            createBoss();
+            flag = true;
+            gameLoop();
+
+            over = document.getElementById("over");
+
+        }
+
+        //우주선 생성 함수
+        function createShip() {
+            ship = new Ship("SHIP", wrapper, 310, 710, 85, 50, 0, 0, 0, 0, "", "./ship.png");
+            objectManager.addObject(ship);
+        }
+
+        //배경화면 움직이게
+        function bgEffect() {
+            bgY++;
+            wrapper.style.backgroundPosition = "0px " + bgY + "px";
+        }
+
+        //키보드값
+        function control() {
+            var key = event.keyCode;
+            switch (key) {
+                case 39:
+                    ship.velX = 5;
+                    break;
+
+                case 37:
+                    ship.velX = -5;
+                    break;
+
+                case 40:
+                    ship.velY = 5;
+                    break;
+
+                case 38:
+                    ship.velY = -5;
+                    break;
+
+
+            }
+            /*
+            if (key == 32) {
+
+                //총알 생성 함수
+                var bullet = new Bullet("BULLET", wrapper, ship.x + (ship.width) / 2 - 10, ship.y - (ship.height) / 2 + 15, 25, 25, 0, -10, 0, 0, "", "./bullet.png");
+                //생성된 총알을 오브젝트 관리자에게 등록
+                objectManager.addObject(bullet);
+        }*/
+
+        }
+
+        //총알 생성 함수
+        function createBullet() {
+            if (flag) {
+                bullet = new Bullet("BULLET", wrapper, ship.x + (ship.width) / 2 - 10, ship.y - (ship.height) / 2 + 15, 25, 25, 0, -5, 10, 10, "", a);
+                //생성된 총알을 오브젝트 관리자에게 등록
+                objectManager.addObject(bullet);
+
+                setTimeout("createBullet()", b);
+            }
+
+
+        }
+
+        //적 비행선 생성 함수
+        function createEnemy() {
+            for (var i = 0; i < 3; i++) {
+                for (var j = 0; j < 7; j++) {
+
+                    enemy = new Enemy("ENEMY", wrapper, j * 100, i * 70, 80, 50, 0, 0, 0, 0, "", "./monster1.png");
+                    objectManager.addObject(enemy);
+                    EnemyArr++;
+                }
+
+            }
+
+        }
+
+        //HP 생성 함수 
+        function createHP() {
+            for (var i = 1; i < 6; i++) {
+                hp = new HP(hp_area, (i * 40) + 50, 15, 30, 30, "./hp.png");
+                hpArray.push(hp);
+            }
+        }
+
+        //적군 총알 생성 함수
+        function createEBullet() {
+            if (flag) {
+                setTimeout("createEBullet()", 1000);
+                //var b = getRandomByRange(1, 100);
+                var a = getRandom(4) + 1;
+                ebullet = new EBullet("EBULLET", wrapper, 50, 0, 15, 15, a, 2, 0, 0, "", "./ball.png");
+                objectManager.addObject(ebullet);
+            }
+        }
+
+        //부스터 생성 함수
+        function createBoost() {
+            if (flag) {
+                setTimeout("createBoost()", 5000);
+                boost = new Boost("BOOST", wrapper, 10, 1, 50, 50, 3, 2, 0, 0, "", "./boost.png");
+                objectManager.addObject(boost);
+            }
+        }
+
+        //점수 
+        function setScore() {
+            score_area.innerText = score + " 점";
+        }
+
+        function createBoss() {
+            if (flag) {
+                setTimeout("createBoss()", 3000);
+                boss = new Boss("BOSS", wrapper, 100, 0, 60, 60, 1, 1, 0, 0, "", "./Boss.png");
+                objectManager.addObject(boss);
+            }
+        }
+
+        function nextStage() {
+            stageNum++;
+            if (stageNum == 1) {
+                time.innerText = "STAGE 1";
+                setTimeout("countDown()", 1000);
+
+            }
+
+        }
+
+        function countDown() {
+
+            sec--;
+            if (sec > 0) {
+                time.innerText = sec;
+                setTimeout("countDown()", 1000);
+            }
+            if (sec == 0) {
+                time.style.display = "none";
+                init();
+            }
+
+        }
+
+
+        function gameOver() {
+
+            var x = objectManager.objectArray.length;
+            for (var i = 0; i < x; i++) {
+                objectManager.removeObject(objectManager.objectArray[0]);
+            }
+            flag = false;
+            over.style.display = "block";
+
+        }
+
+        function reStart() {
+            window.location.reload(1);
+        }
+
+        function stop() {
+            ship.velX = 0;
+            ship.velY = 0;
+        }
+
+        function gameLoop() {
+            if (flag == true) {
+                bgEffect();
+                objectManager.tick();
+                objectManager.render();
+                setTimeout("gameLoop()", 10);
+            }
+        }
+
+
+
+        addEventListener("load", function () {
+            nextStage();
+        });
+    </script>
+</head>
+
+<body onkeydown="control()" onkeyup="stop();">
+    <div id="wrapper">
+        <div id="hp_area"></div>
+        <div id="score_area">0 점</div>
+        <div id="time">3</div>
+        <div id="over">
+            GameOver</br></br>
+            <button id="re" onclick="reStart()">다시 시작</button>
+        </div>
+    </div>
+</body>
+
+</html>
