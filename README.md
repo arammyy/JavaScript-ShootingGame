@@ -31,8 +31,9 @@
     </td>
       <td>▶ Shooting Game Page<br>
       <ul>
-        <li>최상위 class 인 gameobject class를 정의하여 모든 하위객체들이</li>
-        <li>tick ,render method를 구현하도록 설계</li>
+        <li>settimeout을 이용한 gameloop처리하여 배경이 아래로 이동</li>
+        <li>최상위 class 인 gameobject class를 정의하여 모든 하위객체들이<br>
+        tick ,render method를 구현하도록 설계</li>
         <li>모든 gameobject의 등장과 소멸을 처리하는 objectmanager class 정의 </li>
         <li>적군의 배치 밑 포지션을 이차원 배열로 처리</li>
         <li>객체간 충돌을 판단하는 CollisionCheck 함수 정의</li>
@@ -55,9 +56,9 @@
     <td>
     <img src="https://postfiles.pstatic.net/MjAxOTA1MTNfOTkg/MDAxNTU3NzEwNTM3MTMx.Q_BMqCSnHYcrAgtfrvjyL0eWrwlb8H_sZCs-qhmNeHwg.vHRv_ufSV3Ab11Bs_2cUtZcXOX_cDnxaELCIYHxuG_gg.PNG.tag94/hp.png?type=w966" width="250px"/>
     </td>
-    <td>▶ Game Life<br>
+    <td>
       <ul>
-        <li>3초 후 게임 페이지로 이동</li>
+        <li>처음 게임이 시작되면 기본으로 주어지는 5개의 생명</li>
       </ul>
     </td>
   </tr>
@@ -65,9 +66,9 @@
     <td>
     <img src="https://postfiles.pstatic.net/MjAxOTA1MTNfMjg2/MDAxNTU3NzEwNTgyMzE0.9Y-EhixU0cpOmvvErhtcwTewiLTzvoJwDCHlWowYhfsg.XyVVCcKEeK13VYptxbbk659IZUVXa4I04pg1c-Oo9LMg.PNG.tag94/hp2.png?type=w966" width="250px"/>
     </td>
-    <td>▶ Shooting Game Page<br>
+    <td>
       <ul>
-        <li>3초 후 게임 페이지로 이동</li>
+        <li>게임 사용자(우주선)이 적군에 닿거나, 적군의 총알에 맞으면<br>생명이 하나씩 줄어듦</li>
       </ul>
     </td>
   </tr>
@@ -75,9 +76,20 @@
     <td>
     <img src="https://postfiles.pstatic.net/MjAxOTA1MTNfMjYx/MDAxNTU3NzEwNTgyMzQy.xyimn8YFEW0FBJyHJ_4Qh8R_d1jVHTCueOuqA2daS5Eg.dzdS2-9scFFv1h1FauLHftkSXqPnqnkTnakAowZmFQ0g.PNG.tag94/monster1.png?type=w966" width="250px"/>
     </td>
-    <td>▶ Shooting Game Page<br>
+    <td>▶ 적군 1<br>
       <ul>
-        <li>3초 후 게임 페이지로 이동</li>
+        <li>이차원 배열로 처리한 적군을 행과 열에 맞춰 배치</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <img src="https://postfiles.pstatic.net/MjAxOTA1MTNfNjEg/MDAxNTU3NzEwNTgyMzMw.z-H1TgABI28_kk_RZ9sA6yEeZA-inbyL33vN8_a1vH8g.9ydvC072RK3FeZ9WQ0MmWRhKz3OgUDR3E_p65n3Ng7sg.PNG.tag94/Boss.png?type=w966" width="250px"/>
+    </td>
+    <td>▶ 적군 2<br>
+      <ul>
+        <li>settimeout을 이용한 gameloop처리하여 생성되는<br>움직이는 적군</li>
+        <li>맞추면 일반 적군을 맞췄을 때보다 더 높은 점수를 얻음</li>
       </ul>
     </td>
   </tr>
@@ -85,9 +97,9 @@
     <td>
     <img src="https://postfiles.pstatic.net/MjAxOTA1MTNfMjEx/MDAxNTU3NzEwNTgyNTIx.6lz6CDEq9w3N-L5XDuxT2bbtxNpDA_VlK4DGf-uTYb4g.8w4WFZ_JzKnuuwLUdHtr3XWAnwYvRQbmWImN8U95i6sg.PNG.tag94/ship.png?type=w966" width="250px"/>
     </td>
-    <td>▶ Shooting Game Page<br>
+    <td>▶ 게임 사용자<br>
       <ul>
-        <li>3초 후 게임 페이지로 이동</li>
+        <li>javascript의 onkeydown속성을 이용하여<br>사용자가 키보드에 있는 네가지의 화살표에 따라<br>우주선이 이동</li>
       </ul>
     </td>
   </tr>
@@ -95,9 +107,9 @@
     <td>
     <img src="https://postfiles.pstatic.net/MjAxOTA1MjhfMTA1/MDAxNTU5MDM4Nzk4NTY0.II5UB8O5_4xiRW15LmGnF_RaMb4zm5JJ06ZlvF4a0owg.18V2MffzadUJ1v95bC9yy-EcDuUdl2y8QTJhTPxjijwg.PNG.tag94/ball.png?type=w966" width="250px"/>
     </td>
-    <td>▶ Shooting Game Page<br>
+    <td>▶ 적군의 총알<br>
       <ul>
-        <li>3초 후 게임 페이지로 이동</li>
+        <li>settimeout을 이용한 gameloop처리하여 생성되는<br>적군의 총알</li>
       </ul>
     </td>
   </tr>
@@ -105,42 +117,11 @@
     <td>
     <img src="https://postfiles.pstatic.net/MjAxOTA1MjhfMjg3/MDAxNTU5MDM4Nzk5MzY4.uXD7WejqxNThR3Gw7UR7AhyCpvT1W1cRKOvx1djgMbEg.8ZFrsDcIfHCBYz6eAUYafxjX1U0F5Hvyn3qO3t-dNSUg.PNG.tag94/bullet.png?type=w966" width="250px"/>
     </td>
-    <td>▶ Shooting Game Page<br>
+    <td>▶ 사용자의 총알<br>
       <ul>
-        <li>3초 후 게임 페이지로 이동</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>
-    <img src="https://postfiles.pstatic.net/MjAxOTA1MjhfMzIg/MDAxNTU5MDM4Nzk4NDA4.BzeHhHH3bcFaUEKG7fKqHAJ_NqBdrB1i_jmT2YvNpiIg.6aoue7SYbW_a9XHE2A8-_wYk9b8NMSC_M-bhp10JQlUg.PNG.tag94/bullets.png?type=w966" width="250px"/>
-    </td>
-    <td>▶ Shooting Game Page<br>
-      <ul>
-        <li>3초 후 게임 페이지로 이동</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>
-    <img src="https://postfiles.pstatic.net/MjAxOTA1MTNfMjMz/MDAxNTU3NzEwNTgyMzc0.zsl69FABs1H1VPdsbhMJcC4dENQtpkk-a9Azk9es2XIg.YPNKhxUOelzpj7EkUP3_JOFZv79FpGOByjEH7H3gIEAg.PNG.tag94/monster2.png?type=w966" width="250px"/>
-    </td>
-    <td>▶ Shooting Game Page<br>
-      <ul>
-        <li>3초 후 게임 페이지로 이동</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>
-    <img src="https://postfiles.pstatic.net/MjAxOTA1MTNfMjIy/MDAxNTU3NzEwNTgyMzA2.N11OhWU330UcU1JqqLs8EuIEiQx0CFUjzn92as4Yc8Mg.bVTSur916d36r6kAv32_vGIZSZJt9S6_UXtD_o-f_SEg.PNG.tag94/monster3.png?type=w966" width="250px"/>
-    </td>
-    <td>▶ Shooting Game Page<br>
-      <ul>
-        <li>3초 후 게임 페이지로 이동</li>
+        <li>우주선의 중앙 윗부분에서 생성되는 총알</li>
+        <li>아이템을 맞추면 총알이 생성되는 속도가 빨라짐</li>
       </ul>
     </td>
   </tr>
 </table>
-
-  
