@@ -124,4 +124,16 @@
       </ul>
     </td>
   </tr>
+  <tr>
+    <td>
+    <img src="https://postfiles.pstatic.net/MjAxOTA1MTNfMTQ1/MDAxNTU3NzEwNTgyMzI1.4pTLdxmn1Erv6UHkEQo1cwN5f81JO_BMpvPtm7LyEH4g.y4Cq6bJg8LE4dJXXwYsCo2ME20N8mT4WMr5ETBw-biog.PNG.tag94/boost.png?type=w966" width="250px"/>
+    </td>
+    <td>▶ 아이템<br>
+      <ul>
+        <li>settimeout을 이용한 gameloop처리하여 <br>생성되는아이템</li>
+        <li>사용자의 총알로 아이템을 맞추면<br> 총알이 생성되는 속도가 빨라짐</li>
+      </ul>
+    </td>
+  </tr>
 </table>
+
