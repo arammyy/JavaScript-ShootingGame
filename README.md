@@ -91,5 +91,56 @@
       </ul>
     </td>
   </tr>
+  <tr>
+    <td>
+    <img src="https://postfiles.pstatic.net/MjAxOTA1MjhfMTA1/MDAxNTU5MDM4Nzk4NTY0.II5UB8O5_4xiRW15LmGnF_RaMb4zm5JJ06ZlvF4a0owg.18V2MffzadUJ1v95bC9yy-EcDuUdl2y8QTJhTPxjijwg.PNG.tag94/ball.png?type=w966" width="250px"/>
+    </td>
+    <td>▶ Shooting Game Page<br>
+      <ul>
+        <li>3초 후 게임 페이지로 이동</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <img src="https://postfiles.pstatic.net/MjAxOTA1MjhfMjg3/MDAxNTU5MDM4Nzk5MzY4.uXD7WejqxNThR3Gw7UR7AhyCpvT1W1cRKOvx1djgMbEg.8ZFrsDcIfHCBYz6eAUYafxjX1U0F5Hvyn3qO3t-dNSUg.PNG.tag94/bullet.png?type=w966" width="250px"/>
+    </td>
+    <td>▶ Shooting Game Page<br>
+      <ul>
+        <li>3초 후 게임 페이지로 이동</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <img src="https://postfiles.pstatic.net/MjAxOTA1MjhfMzIg/MDAxNTU5MDM4Nzk4NDA4.BzeHhHH3bcFaUEKG7fKqHAJ_NqBdrB1i_jmT2YvNpiIg.6aoue7SYbW_a9XHE2A8-_wYk9b8NMSC_M-bhp10JQlUg.PNG.tag94/bullets.png?type=w966" width="250px"/>
+    </td>
+    <td>▶ Shooting Game Page<br>
+      <ul>
+        <li>3초 후 게임 페이지로 이동</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <img src="https://postfiles.pstatic.net/MjAxOTA1MTNfMjMz/MDAxNTU3NzEwNTgyMzc0.zsl69FABs1H1VPdsbhMJcC4dENQtpkk-a9Azk9es2XIg.YPNKhxUOelzpj7EkUP3_JOFZv79FpGOByjEH7H3gIEAg.PNG.tag94/monster2.png?type=w966" width="250px"/>
+    </td>
+    <td>▶ Shooting Game Page<br>
+      <ul>
+        <li>3초 후 게임 페이지로 이동</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <img src="https://postfiles.pstatic.net/MjAxOTA1MTNfMjIy/MDAxNTU3NzEwNTgyMzA2.N11OhWU330UcU1JqqLs8EuIEiQx0CFUjzn92as4Yc8Mg.bVTSur916d36r6kAv32_vGIZSZJt9S6_UXtD_o-f_SEg.PNG.tag94/monster3.png?type=w966" width="250px"/>
+    </td>
+    <td>▶ Shooting Game Page<br>
+      <ul>
+        <li>3초 후 게임 페이지로 이동</li>
+      </ul>
+    </td>
+  </tr>
 </table>
+
   
