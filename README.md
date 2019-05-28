@@ -130,7 +130,7 @@
     </td>
     <td>▶ 아이템<br>
       <ul>
-        <li>settimeout을 이용한 gameloop처리하여 <br>생성되는아이템</li>
+        <li>settimeout을 이용한 gameloop처리하여 <br>생성되는 아이템</li>
         <li>사용자의 총알로 아이템을 맞추면<br> 총알이 생성되는 속도가 빨라짐</li>
       </ul>
     </td>
